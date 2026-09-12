@@ -16,7 +16,7 @@ export default function Skills() {
               <p className="font-mono text-xs tracking-[0.3em] text-neutral-500 uppercase">
                 {group.index}
               </p>
-              <h3 className="font-display mt-2 text-2xl font-bold">{group.title}</h3>
+              <h3 className="font-display mt-2 text-xl font-bold">{group.title}</h3>
               <ul className="mt-6 flex-1 space-y-1">
                 {group.skills.map((skill) => (
                   <li

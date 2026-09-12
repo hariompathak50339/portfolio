@@ -24,7 +24,7 @@ export default function About() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <p className="font-display mt-6 text-2xl font-bold">Hariom Pathak</p>
+                <p className="font-display mt-6 text-xl font-bold">Hariom Pathak</p>
                 <p className="mt-1 font-mono text-xs tracking-[0.2em] text-neutral-500 uppercase">
                   {profile.role}
                 </p>
@@ -55,7 +55,7 @@ export default function About() {
                 key={i}
                 className={
                   i === 0
-                    ? "text-xl leading-relaxed text-neutral-200 sm:text-2xl"
+                    ? "text-lg leading-relaxed text-neutral-200 sm:text-xl"
                     : "mt-5 leading-relaxed text-neutral-400"
                 }
               >
@@ -96,7 +96,7 @@ export default function About() {
                 <p className="font-mono text-[11px] tracking-[0.2em] uppercase opacity-60">
                   Latest launch
                 </p>
-                <p className="font-display text-xl font-bold">
+                <p className="font-display text-lg font-bold">
                   FinePrint — live in production
                 </p>
               </div>

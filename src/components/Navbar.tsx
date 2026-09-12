@@ -87,7 +87,7 @@ export default function Navbar() {
                 key={link.href + link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-display border-b border-white/10 py-4 text-4xl font-bold tracking-tight"
+                className="font-display border-b border-white/10 py-4 text-3xl font-bold tracking-tight"
               >
                 <span className="font-mono mr-3 text-sm font-normal text-neutral-500">
                   0{i + 1}

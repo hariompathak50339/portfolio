@@ -72,7 +72,7 @@ export default function Footer() {
 
         <p
           aria-hidden
-          className="font-display text-outline mt-14 leading-none font-bold tracking-tighter whitespace-nowrap select-none text-[clamp(2.5rem,11.5vw,10rem)] opacity-60"
+          className="font-display text-outline mt-14 leading-none font-bold tracking-tighter whitespace-nowrap select-none text-[clamp(2rem,9vw,7rem)] opacity-60"
         >
           HARIOM PATHAK
         </p>

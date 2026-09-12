@@ -42,11 +42,11 @@ function FeaturedCard({ project }: { project: Project }) {
         </span>
       </div>
 
-      <h3 className="font-display mt-6 text-4xl font-bold tracking-tight sm:text-6xl">
+      <h3 className="font-display mt-6 text-3xl font-bold tracking-tight sm:text-5xl">
         {project.title}
-        <span className="text-neutral-600">.</span>
+        <span className="text-blue-500">.</span>
       </h3>
-      <p className="mt-5 max-w-2xl leading-relaxed text-neutral-400 sm:text-lg">
+      <p className="mt-5 max-w-2xl leading-relaxed text-neutral-400 sm:text-base">
         {project.description}
       </p>
 
@@ -111,7 +111,7 @@ export default function Projects() {
                   </span>
                   <StatusBadge status={project.status} />
                 </div>
-                <h3 className="font-display mt-5 text-3xl font-bold tracking-tight">
+                <h3 className="font-display mt-5 text-2xl font-bold tracking-tight">
                   {project.title}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-neutral-400">
@@ -155,7 +155,7 @@ export default function Projects() {
                 <GithubIcon className="h-6 w-6" />
               </span>
               <div>
-                <p className="font-display text-3xl font-bold tracking-tight">
+                  <p className="font-display text-2xl font-bold tracking-tight">
                   More experiments on GitHub
                 </p>
                 <p className="mt-2 inline-flex items-center gap-1.5 font-mono text-xs tracking-[0.2em] uppercase opacity-70">

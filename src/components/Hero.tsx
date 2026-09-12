@@ -18,15 +18,15 @@ export default function Hero() {
 
         {/* name */}
         <h1 className="font-display mt-8 leading-[0.9] font-bold tracking-tighter">
-          <span className="block text-[clamp(2.25rem,7vw,5rem)]">HARIOM</span>
-          <span className="text-outline block text-[clamp(2.25rem,7vw,5rem)]">
-            PATHAK
-          </span>
+          <span className="block text-[clamp(1.75rem,5vw,3.5rem)]">HARIOM</span>
+            <span className="block text-[clamp(1.75rem,5vw,3.5rem)] text-blue-500">
+              PATHAK
+            </span>
         </h1>
 
         {/* sub */}
         <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <p className="max-w-xl text-base leading-relaxed text-neutral-400 sm:text-lg">
+            <p className="max-w-xl text-sm leading-relaxed text-neutral-400 sm:text-base">
             <span className="font-mono text-sm text-white">{profile.tagline}</span>
             <br />
             I design & build fast, minimal web experiences with{" "}
@@ -36,7 +36,7 @@ export default function Hero() {
               href="https://fineprint.hariompathak.in"
               target="_blank"
               rel="noreferrer"
-              className="underline decoration-white/40 underline-offset-4 hover:text-white hover:decoration-white"
+                className="underline decoration-blue-500/50 underline-offset-4 hover:text-blue-400 hover:decoration-blue-400"
             >
               FinePrint
             </a>
@@ -64,7 +64,7 @@ export default function Hero() {
         <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3">
           {stats.map((s) => (
             <div key={s.label} className="bg-[#0f0f0f] px-6 py-5">
-              <p className="font-display text-3xl font-bold">{s.value}</p>
+              <p className="font-display text-2xl font-bold">{s.value}</p>
               <p className="mt-1 font-mono text-[11px] tracking-[0.18em] text-neutral-500 uppercase">
                 {s.label}
               </p>

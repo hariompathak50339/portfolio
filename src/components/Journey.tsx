@@ -13,10 +13,10 @@ export default function Journey() {
               key={`${m.title}-${i}`}
               className="grid gap-3 border-t border-white/10 py-8 last:border-b sm:grid-cols-12 sm:gap-6 sm:px-4"
             >
-              <p className="font-display text-2xl font-bold text-neutral-500 sm:col-span-2 sm:text-3xl">
+              <p className="font-display text-xl font-bold text-neutral-500 sm:col-span-2 sm:text-2xl">
                 {m.year}
               </p>
-              <h3 className="font-display text-xl font-bold tracking-tight sm:col-span-4 sm:text-2xl">
+              <h3 className="font-display text-lg font-bold tracking-tight sm:col-span-4 sm:text-xl">
                 {m.title}
               </h3>
               <p className="leading-relaxed text-neutral-400 sm:col-span-6">

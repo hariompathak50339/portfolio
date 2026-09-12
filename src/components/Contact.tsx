@@ -33,7 +33,7 @@ export default function Contact() {
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="max-w-md text-lg leading-relaxed text-neutral-400">
+            <p className="max-w-md text-base leading-relaxed text-neutral-400">
               Have an internship, a freelance idea, or just want to talk
               Next.js? My inbox is always open — I usually reply within a day.
             </p>
@@ -62,7 +62,7 @@ export default function Contact() {
                   rel="noreferrer"
                   className="flex items-center justify-between border-b border-white/10 py-4 hover:border-white/40"
                 >
-                  <span className="font-display text-2xl font-bold tracking-tight">
+                    <span className="font-display text-xl font-bold tracking-tight">
                     <span className="font-mono mr-3 text-xs font-normal text-neutral-500">
                       0{i + 1}
                     </span>
