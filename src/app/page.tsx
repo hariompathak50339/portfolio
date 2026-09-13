@@ -7,21 +7,25 @@ import Projects from "@/components/Projects";
 import Journey from "@/components/Journey";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Starfield from "@/components/Starfield";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-neutral-50">
-      <Navbar />
-      <main>
-        <Hero />
-        <Marquee />
-        <About />
-        <Skills />
-        <Projects />
-        <Journey />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="relative min-h-screen bg-[#020617] text-slate-100">
+      <Starfield />
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <Marquee />
+          <About />
+          <Skills />
+          <Projects />
+          <Journey />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

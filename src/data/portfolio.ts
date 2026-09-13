@@ -102,26 +102,6 @@ export const projects: Project[] = [
     status: "Live",
     featured: true,
   },
-  {
-    title: "Linkfolio",
-    index: "02",
-    year: "2026",
-    description:
-      "A minimal, blazing-fast link-in-bio page with a monochrome aesthetic, view analytics and one-command deploys. My playground for edge rendering and OG-image generation.",
-    tags: ["Next.js", "TypeScript", "Edge Runtime"],
-    github: "https://github.com/hariompathak50339",
-    status: "In progress",
-  },
-  {
-    title: "Taskflow",
-    index: "03",
-    year: "2026",
-    description:
-      "A keyboard-first task manager concept — offline-capable, zero clutter, with local persistence and buttery list animations. Currently in design.",
-    tags: ["React", "TypeScript", "Framer Motion"],
-    github: "https://github.com/hariompathak50339",
-    status: "Concept",
-  },
 ];
 
 export type Milestone = {
@@ -151,9 +131,9 @@ export const journey: Milestone[] = [
   },
   {
     year: "2026",
-    title: "Second year — levelling up",
+    title: "Second year — building foundations",
     description:
-      "Deepening the backend (Node.js, databases), contributing, freelancing and hunting for internships.",
+      "Currently in 2nd year of Diploma in IT, learning backend basics with Node.js and databases, and looking for internship opportunities to learn on real projects.",
   },
 ];
 

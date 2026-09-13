@@ -70,13 +70,6 @@ export default function Footer() {
           </button>
         </div>
 
-        <p
-          aria-hidden
-          className="font-display text-outline mt-14 leading-none font-bold tracking-tighter whitespace-nowrap select-none text-[clamp(2rem,9vw,7rem)] opacity-60"
-        >
-          HARIOM PATHAK
-        </p>
-
         <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
           <p className="font-mono text-[11px] tracking-[0.2em] text-neutral-600 uppercase">
             © {year} {profile.name} — All rights reserved
