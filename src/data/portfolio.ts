@@ -150,8 +150,6 @@ export const marqueeItems = [
 
 export const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Work", href: "#work" },
-  { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
 ];

@@ -94,7 +94,7 @@ export default function Projects() {
   return (
     <section id="work" className="relative scroll-mt-20 border-t border-white/10">
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-        <SectionHeading index="03" eyebrow="Selected work" title="Things I've built & shipped." />
+        <SectionHeading index="02" eyebrow="Selected work" title="Things I've built & shipped." />
 
         <div className="mt-12">
           {featured && <FeaturedCard project={featured} />}

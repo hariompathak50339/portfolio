@@ -60,7 +60,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative scroll-mt-20 border-t border-white/10">
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
-        <SectionHeading index="05" eyebrow="Contact" title="Let's build something great." />
+        <SectionHeading index="03" eyebrow="Contact" title="Let's build something great." />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
