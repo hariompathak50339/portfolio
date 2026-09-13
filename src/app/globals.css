@@ -8,8 +8,8 @@
 
 html,
 body {
-  background: #F7F7F5;
-  color: #3F3F46;
+  background: #0A0A0C;
+  color: #A7A9B2;
   overflow-x: hidden;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 ::selection {
-  background: #4F6BFF;
+  background: #7C6CFF;
   color: #ffffff;
 }
 
@@ -29,20 +29,20 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F7F5;
+  background: #0A0A0C;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4D4D8;
+  background: #2A2A2E;
   border-radius: 8px;
-  border: 2px solid #F7F7F5;
+  border: 2px solid #0A0A0C;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A1A1AA;
+  background: #3A3A40;
 }
 
-/* ---- outlined display text: subtle premium outline ---- */
+/* ---- outlined display text: very subtle ---- */
 .text-outline {
-  -webkit-text-stroke: 1.5px rgba(17, 17, 17, 0.14);
+  -webkit-text-stroke: 1.5px rgba(245, 245, 247, 0.12);
   color: transparent;
 }
 @media (min-width: 768px) {
@@ -51,10 +51,15 @@ body {
   }
 }
 
-/* ---- background grid: keep minimal, unused by default ---- */
+/* ---- background grid: unused, kept minimal ---- */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(17, 17, 17, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(17, 17, 17, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(245, 245, 247, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 245, 247, 0.03) 1px, transparent 1px);
   background-size: 72px 72px;
+}
+
+/* ---- extremely subtle depth glow, use sparingly ---- */
+.glow-subtle {
+  background: radial-gradient(ellipse 60% 45% at 50% 0%, rgba(124, 108, 255, 0.07), transparent 70%);
 }

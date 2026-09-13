@@ -20,16 +20,16 @@ export default function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-[80] ${
           scrolled
-            ? "border-b border-zinc-200 bg-[#F7F7F5]/90 backdrop-blur-xl"
+            ? "border-b border-white/10 bg-[#0A0A0C]/90 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
           <a href="#top" className="flex items-center gap-2">
-            <span className="font-display flex h-9 w-9 items-center justify-center rounded-full bg-[#111111] text-sm font-bold text-white">
+            <span className="font-display flex h-9 w-9 items-center justify-center rounded-full bg-[#F5F5F7] text-sm font-bold text-[#0A0A0C]">
               HP
             </span>
-            <span className="font-mono text-xs tracking-[0.25em] text-[#3F3F46] uppercase">
+            <span className="font-mono text-xs tracking-[0.25em] text-[#A7A9B2] uppercase">
               hariom
             </span>
           </a>
@@ -39,9 +39,9 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="font-mono text-xs tracking-[0.2em] text-[#71717A] uppercase transition-colors hover:text-[#111111]"
+                  className="font-mono text-xs tracking-[0.2em] text-[#737681] uppercase transition-colors hover:text-[#F5F5F7]"
                 >
-                  <span className="mr-1 text-[#4F6BFF]">0{i + 1}</span> {link.label}
+                  <span className="mr-1 text-[#7C6CFF]">0{i + 1}</span> {link.label}
                 </a>
               </li>
             ))}
@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden items-center gap-1.5 rounded-full bg-[#111111] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#3F3F46] md:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full bg-[#F5F5F7] px-5 py-2.5 text-sm font-semibold text-[#0A0A0C] transition-colors hover:bg-white md:inline-flex"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-4 w-4" />
@@ -58,7 +58,7 @@ export default function Navbar() {
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 text-[#111111] md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#F5F5F7] md:hidden"
             >
               <Menu className="h-5 w-5" />
             </button>
@@ -68,15 +68,15 @@ export default function Navbar() {
 
       {/* mobile menu */}
       {open && (
-        <div className="fixed inset-0 z-[110] flex flex-col bg-[#F7F7F5] md:hidden">
+        <div className="fixed inset-0 z-[110] flex flex-col bg-[#0A0A0C] md:hidden">
           <div className="flex h-16 items-center justify-between px-5">
-            <span className="font-mono text-xs tracking-[0.25em] text-[#71717A] uppercase">
+            <span className="font-mono text-xs tracking-[0.25em] text-[#737681] uppercase">
               Menu
             </span>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 text-[#111111]"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#F5F5F7]"
             >
               <X className="h-5 w-5" />
             </button>
@@ -87,16 +87,16 @@ export default function Navbar() {
                 key={link.href + link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-display border-b border-zinc-200 py-4 text-3xl font-bold tracking-tight text-[#111111]"
+                className="font-display border-b border-white/10 py-4 text-3xl font-bold tracking-tight text-[#F5F5F7]"
               >
-                <span className="font-mono mr-3 text-sm font-normal text-[#4F6BFF]">
+                <span className="font-mono mr-3 text-sm font-normal text-[#7C6CFF]">
                   0{i + 1}
                 </span>
                 {link.label}
               </a>
             ))}
           </nav>
-          <p className="px-8 pb-10 font-mono text-xs tracking-widest text-[#71717A] uppercase">
+          <p className="px-8 pb-10 font-mono text-xs tracking-widest text-[#737681] uppercase">
             {profile.availability}
           </p>
         </div>
