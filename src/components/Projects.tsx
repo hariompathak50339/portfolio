@@ -20,8 +20,8 @@ function StatusBadge({ status }: { status: Project["status"] }) {
     status === "Live"
       ? "border-emerald-400/20 bg-emerald-400/10 text-emerald-300"
       : status === "In progress"
-        ? "border-white/15 bg-white/5 text-[#A7A9B2]"
-        : "border-white/10 bg-transparent text-[#737681]";
+        ? "border-white/15 bg-white/5 text-[#AAB4C5]"
+        : "border-white/10 bg-transparent text-[#718096]";
   return (
     <span
       className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-[11px] tracking-[0.15em] uppercase ${styles}`}
@@ -34,19 +34,19 @@ function StatusBadge({ status }: { status: Project["status"] }) {
 
 function FeaturedCard({ project }: { project: Project }) {
   return (
-    <article className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#17171A] p-7 sm:p-10 lg:p-12">
+    <article className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0D1728] p-7 sm:p-10 lg:p-12">
       <div className="flex flex-wrap items-center gap-3">
         <StatusBadge status={project.status} />
-        <span className="font-mono text-xs tracking-[0.2em] text-[#737681] uppercase">
+        <span className="font-mono text-xs tracking-[0.2em] text-[#718096] uppercase">
           Featured — {project.year}
         </span>
       </div>
 
-      <h3 className="font-display mt-6 text-3xl font-bold tracking-tight text-[#F5F5F7] sm:text-5xl">
+      <h3 className="font-display mt-6 text-3xl font-bold tracking-tight text-[#F5F7FF] sm:text-5xl">
         {project.title}
-        <span className="text-[#7C6CFF]">.</span>
+        <span className="text-[#5B8CFF]">.</span>
       </h3>
-      <p className="mt-5 max-w-2xl leading-relaxed text-[#A7A9B2] sm:text-base">
+      <p className="mt-5 max-w-2xl leading-relaxed text-[#AAB4C5] sm:text-base">
         {project.description}
       </p>
 
@@ -54,7 +54,7 @@ function FeaturedCard({ project }: { project: Project }) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-mono text-xs text-[#A7A9B2]"
+            className="rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-mono text-xs text-[#AAB4C5]"
           >
             {tag}
           </span>
@@ -67,7 +67,7 @@ function FeaturedCard({ project }: { project: Project }) {
             href={project.live}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#F5F5F7] px-6 py-3 text-sm font-semibold text-[#0A0A0C] transition-colors hover:bg-white"
+            className="inline-flex items-center gap-2 rounded-full bg-[#4F7CFF] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#5B8CFF]"
           >
             <ExternalLink className="h-4 w-4" />
             Visit live site
@@ -78,7 +78,7 @@ function FeaturedCard({ project }: { project: Project }) {
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-[#F5F5F7] transition-colors hover:border-white/40"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-[#F5F7FF] transition-colors hover:border-white/40"
           >
             <GithubIcon className="h-4 w-4" />
             Source code
@@ -92,7 +92,7 @@ function FeaturedCard({ project }: { project: Project }) {
 export default function Projects() {
   const [featured, ...rest] = projects;
   return (
-    <section id="work" className="relative scroll-mt-20 border-t border-white/10 bg-[#0A0A0C]">
+    <section id="work" className="relative scroll-mt-20 border-t border-white/10 bg-[#050B18]">
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
         <SectionHeading index="02" eyebrow="Selected work" title="Things I've built & shipped." />
 
@@ -103,39 +103,39 @@ export default function Projects() {
             {rest.map((project) => (
               <article
                 key={project.title}
-                className="flex h-full flex-col rounded-3xl border border-white/10 bg-[#17171A] p-7 sm:p-8"
+                className="flex h-full flex-col rounded-3xl border border-white/10 bg-[#0D1728] p-7 sm:p-8"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs tracking-[0.25em] text-[#737681]">
+                  <span className="font-mono text-xs tracking-[0.25em] text-[#718096]">
                     /{project.index}
                   </span>
                   <StatusBadge status={project.status} />
                 </div>
-                <h3 className="font-display mt-5 text-2xl font-bold tracking-tight text-[#F5F5F7]">
+                <h3 className="font-display mt-5 text-2xl font-bold tracking-tight text-[#F5F7FF]">
                   {project.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[#A7A9B2]">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-[#AAB4C5]">
                   {project.description}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-[#737681]"
+                      className="rounded-full bg-white/5 px-3 py-1 font-mono text-[11px] text-[#718096]"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
-                  <span className="font-mono text-xs tracking-[0.2em] text-[#737681] uppercase">
+                  <span className="font-mono text-xs tracking-[0.2em] text-[#718096] uppercase">
                     {project.year}
                   </span>
                   <a
                     href={project.github ?? "https://github.com/hariompathak50339"}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#F5F5F7] hover:text-[#7C6CFF]"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#F5F7FF] hover:text-[#5B8CFF]"
                   >
                     View on GitHub
                     <ArrowUpRight className="h-4 w-4" />
@@ -149,9 +149,9 @@ export default function Projects() {
               href="https://github.com/hariompathak50339"
               target="_blank"
               rel="noreferrer"
-              className="flex h-full min-h-64 flex-col justify-between rounded-3xl bg-[#F5F5F7] p-7 text-[#0A0A0C] transition-colors hover:bg-white sm:p-8"
+              className="flex h-full min-h-64 flex-col justify-between rounded-3xl bg-[#F5F7FF] p-7 text-[#050B18] transition-colors hover:bg-white sm:p-8"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A0A0C] text-white">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#050B18] text-white">
                 <GithubIcon className="h-6 w-6" />
               </span>
               <div>

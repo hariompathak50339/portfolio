@@ -34,14 +34,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0C",
+  themeColor: "#050B18",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body
-        className={`${display.variable} ${sans.variable} ${mono.variable} bg-[#0A0A0C] text-[#A7A9B2] antialiased`}
+        className={`${display.variable} ${sans.variable} ${mono.variable} bg-[#050B18] text-[#AAB4C5] antialiased`}
       >
         {children}
       </body>

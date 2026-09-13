@@ -58,24 +58,24 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-20 border-t border-white/10 bg-[#0A0A0C]">
+    <section id="contact" className="relative scroll-mt-20 border-t border-white/10 bg-[#050B18]">
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
         <SectionHeading index="03" eyebrow="Contact" title="Let's build something great." />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="max-w-md text-base leading-relaxed text-[#A7A9B2]">
+            <p className="max-w-md text-base leading-relaxed text-[#AAB4C5]">
               Have an internship, a freelance idea, or just want to talk
               Next.js? My inbox is always open — I usually reply within a day.
             </p>
             <button
               onClick={copyEmail}
-              className="mt-8 flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#17171A] px-6 py-5 text-left transition-colors hover:border-white/25"
+              className="mt-8 flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#0D1728] px-6 py-5 text-left transition-colors hover:border-white/25"
             >
-              <span className="font-mono text-sm break-all text-[#F5F5F7] sm:text-base">
+              <span className="font-mono text-sm break-all text-[#F5F7FF] sm:text-base">
                 {toEmail}
               </span>
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F5F5F7] text-[#0A0A0C]">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F5F7FF] text-[#050B18]">
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               </span>
             </button>
@@ -84,7 +84,7 @@ export default function Contact() {
                 Copied to clipboard
               </p>
             ) : (
-              <p className="mt-2 font-mono text-xs tracking-widest text-[#737681] uppercase">
+              <p className="mt-2 font-mono text-xs tracking-widest text-[#718096] uppercase">
                 Click to copy
               </p>
             )}
@@ -96,14 +96,14 @@ export default function Contact() {
                 )}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#F5F5F7] px-4 py-3 text-sm font-semibold text-[#0A0A0C] transition-colors hover:bg-white"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#4F7CFF] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#5B8CFF]"
               >
                 <Mail className="h-4 w-4" />
                 Open in Gmail
               </a>
               <a
                 href={`mailto:${toEmail}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-[#F5F5F7] transition-colors hover:border-white/40"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-[#F5F7FF] transition-colors hover:border-white/40"
               >
                 Mail app
                 <ArrowUpRight className="h-4 w-4" />
@@ -114,17 +114,17 @@ export default function Contact() {
               <div className="mt-4">
                 <button
                   onClick={copyPhone}
-                  className="flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#17171A] px-6 py-5 text-left transition-colors hover:border-white/25"
+                  className="flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#0D1728] px-6 py-5 text-left transition-colors hover:border-white/25"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-[#A7A9B2]">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-[#AAB4C5]">
                       <Phone className="h-4 w-4" />
                     </span>
-                    <span className="font-mono text-sm text-[#F5F5F7] sm:text-base">
+                    <span className="font-mono text-sm text-[#F5F7FF] sm:text-base">
                       {phoneDisplay}
                     </span>
                   </span>
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F5F5F7] text-[#0A0A0C]">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F5F7FF] text-[#050B18]">
                     {copiedPhone ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                   </span>
                 </button>
@@ -133,14 +133,14 @@ export default function Contact() {
                     Number copied
                   </p>
                 ) : (
-                  <p className="mt-2 font-mono text-xs tracking-widest text-[#737681] uppercase">
+                  <p className="mt-2 font-mono text-xs tracking-widest text-[#718096] uppercase">
                     Click to copy number
                   </p>
                 )}
                 <div className="mt-3 grid grid-cols-2 gap-3">
                   <a
                     href={`tel:${phone}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#F5F5F7] px-4 py-3 text-sm font-semibold text-[#0A0A0C] transition-colors hover:bg-white"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#4F7CFF] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#5B8CFF]"
                   >
                     <Phone className="h-4 w-4" />
                     Call me
@@ -151,7 +151,7 @@ export default function Contact() {
                     )}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-[#F5F5F7] transition-colors hover:border-white/40"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 text-sm font-semibold text-[#F5F7FF] transition-colors hover:border-white/40"
                   >
                     <MessageCircle className="h-4 w-4" />
                     WhatsApp
@@ -169,13 +169,13 @@ export default function Contact() {
                   rel="noreferrer"
                   className="flex items-center justify-between border-b border-white/10 py-4 transition-colors hover:border-white/25"
                 >
-                    <span className="font-display text-xl font-bold tracking-tight text-[#F5F5F7]">
-                    <span className="font-mono mr-3 text-xs font-normal text-[#7C6CFF]">
+                    <span className="font-display text-xl font-bold tracking-tight text-[#F5F7FF]">
+                    <span className="font-mono mr-3 text-xs font-normal text-[#5B8CFF]">
                       0{i + 1}
                     </span>
                     {s.label}
                   </span>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#F5F5F7] transition-colors hover:bg-[#F5F5F7] hover:text-[#0A0A0C]">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-[#F5F7FF] transition-colors hover:bg-[#F5F7FF] hover:text-[#050B18]">
                     <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </a>
@@ -185,17 +185,17 @@ export default function Contact() {
 
           <form
             onSubmit={onSubmitGmail}
-            className="rounded-3xl border border-white/10 bg-[#17171A] p-6 sm:p-8"
+            className="rounded-3xl border border-white/10 bg-[#0D1728] p-6 sm:p-8"
           >
-            <p className="font-mono text-xs tracking-[0.25em] text-[#737681] uppercase">
+            <p className="font-mono text-xs tracking-[0.25em] text-[#718096] uppercase">
               Send a message
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-[#737681]">
+            <p className="mt-2 text-sm leading-relaxed text-[#718096]">
               This opens Gmail with your message pre-filled to {toEmail}.
             </p>
             <div className="mt-6 space-y-4">
               <div>
-                <label htmlFor="name" className="font-mono text-xs tracking-widest text-[#737681] uppercase">
+                <label htmlFor="name" className="font-mono text-xs tracking-widest text-[#718096] uppercase">
                   Your name
                 </label>
                 <input
@@ -204,11 +204,11 @@ export default function Contact() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Jane Doe"
-                  className="mt-2 w-full rounded-xl border border-white/10 bg-[#0A0A0C] px-4 py-3.5 text-sm text-[#F5F5F7] placeholder:text-[#737681] focus:border-[#7C6CFF] focus:outline-none"
+                  className="mt-2 w-full rounded-xl border border-white/10 bg-[#050B18] px-4 py-3.5 text-sm text-[#F5F7FF] placeholder:text-[#718096] focus:border-[#5B8CFF] focus:outline-none"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="font-mono text-xs tracking-widest text-[#737681] uppercase">
+                <label htmlFor="email" className="font-mono text-xs tracking-widest text-[#718096] uppercase">
                   Your email
                 </label>
                 <input
@@ -218,11 +218,11 @@ export default function Contact() {
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="jane@company.com"
-                  className="mt-2 w-full rounded-xl border border-white/10 bg-[#0A0A0C] px-4 py-3.5 text-sm text-[#F5F5F7] placeholder:text-[#737681] focus:border-[#7C6CFF] focus:outline-none"
+                  className="mt-2 w-full rounded-xl border border-white/10 bg-[#050B18] px-4 py-3.5 text-sm text-[#F5F7FF] placeholder:text-[#718096] focus:border-[#5B8CFF] focus:outline-none"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="font-mono text-xs tracking-widest text-[#737681] uppercase">
+                <label htmlFor="message" className="font-mono text-xs tracking-widest text-[#718096] uppercase">
                   Message
                 </label>
                 <textarea
@@ -232,12 +232,12 @@ export default function Contact() {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Tell me about your project, timeline and goals…"
-                  className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-[#0A0A0C] px-4 py-3.5 text-sm text-[#F5F5F7] placeholder:text-[#737681] focus:border-[#7C6CFF] focus:outline-none"
+                  className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-[#050B18] px-4 py-3.5 text-sm text-[#F5F7FF] placeholder:text-[#718096] focus:border-[#5B8CFF] focus:outline-none"
                 />
               </div>
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#F5F5F7] px-6 py-4 text-sm font-semibold text-[#0A0A0C] transition-colors hover:bg-white"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#4F7CFF] px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#5B8CFF]"
               >
                 Send via Gmail
                 <Send className="h-4 w-4" />
@@ -245,7 +245,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={openMailApp}
-                className="w-full text-center font-mono text-xs tracking-widest text-[#737681] uppercase transition-colors hover:text-[#F5F5F7]"
+                className="w-full text-center font-mono text-xs tracking-widest text-[#718096] uppercase transition-colors hover:text-[#F5F7FF]"
               >
                 or use default mail app instead
               </button>
