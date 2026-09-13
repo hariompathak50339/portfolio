@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
 html,
 body {
-  background: #020617;
-  color: #f1f5f9;
+  background: #F7F7F5;
+  color: #3F3F46;
   overflow-x: hidden;
 }
 
 body {
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
 }
 
 ::selection {
-  background: #7c3aed;
+  background: #4F6BFF;
   color: #ffffff;
 }
 
@@ -28,20 +29,20 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #F7F7F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #D4D4D8;
   border-radius: 8px;
-  border: 2px solid #020617;
+  border: 2px solid #F7F7F5;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: #A1A1AA;
 }
 
-/* ---- outlined display text ---- */
+/* ---- outlined display text: subtle premium outline ---- */
 .text-outline {
-  -webkit-text-stroke: 1.5px rgba(241, 245, 249, 0.25);
+  -webkit-text-stroke: 1.5px rgba(17, 17, 17, 0.14);
   color: transparent;
 }
 @media (min-width: 768px) {
@@ -50,49 +51,10 @@ body {
   }
 }
 
-/* ---- background grid ---- */
+/* ---- background grid: keep minimal, unused by default ---- */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.04) 1px, transparent 1px);
   background-size: 72px 72px;
-}
-
-/* ---- universe stars ---- */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
-}
-
-@keyframes shooting {
-  0% { transform: translateX(0) translateY(0); opacity: 0; }
-  5% { opacity: 1; }
-  20% { transform: translateX(-220px) translateY(120px); opacity: 0; }
-  100% { transform: translateX(-220px) translateY(120px); opacity: 0; }
-}
-
-.stars-layer {
-  background-image:
-    radial-gradient(1px 1px at 12px 22px, #fff 100%, transparent 100%),
-    radial-gradient(1px 1px at 68px 88px, #fff 100%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 132px 42px, #c4b5fd 100%, transparent 100%),
-    radial-gradient(1px 1px at 198px 130px, #fff 100%, transparent 100%),
-    radial-gradient(1px 1px at 248px 18px, #bae6fd 100%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 310px 95px, #fff 100%, transparent 100%),
-    radial-gradient(1px 1px at 372px 52px, #fff 100%, transparent 100%),
-    radial-gradient(1px 1px at 430px 140px, #ddd6fe 100%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 490px 28px, #fff 100%, transparent 100%),
-    radial-gradient(1px 1px at 552px 108px, #fff 100%, transparent 100%);
-  background-size: 600px 180px;
-}
-
-.stars-twinkle-1 {
-  animation: twinkle 3.5s ease-in-out infinite;
-}
-.stars-twinkle-2 {
-  animation: twinkle 5s ease-in-out infinite reverse;
-}
-
-.shooting-star {
-  animation: shooting 7s linear infinite;
 }
