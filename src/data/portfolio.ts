@@ -6,8 +6,9 @@ export const profile = {
   tagline: "Diploma in Information Technology — Year 2",
   college: "Silver Oak University, Ahmedabad",
   location: "India",
-  // 👆 Change this to your real email address
-  email: "hello@hariompathak.in",
+  email: "hariomhpathak@gmail.com",
+  phone: "+919723550339",
+  phoneDisplay: "+91 97235 50339",
   availability: "Open to internships & collaborations",
   bio: [
     "I'm Hariom Pathak, a second-year Diploma in Information Technology student at Silver Oak University, Ahmedabad, who loves turning ideas into fast, minimal products for the web.",

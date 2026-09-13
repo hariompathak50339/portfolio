@@ -1,17 +1,24 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, Copy, Check, Send } from "lucide-react";
+import { ArrowUpRight, Copy, Check, Send, Mail, Phone, MessageCircle } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { profile, socials } from "@/data/portfolio";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [copied, setCopied] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
+
+  const toEmail = profile.email;
+  const phone = (profile as { phone?: string }).phone ?? "";
+  const phoneDisplay =
+    (profile as { phoneDisplay?: string }).phoneDisplay ?? phone;
+  const whatsappNumber = phone.replace(/[^0-9]/g, "");
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(profile.email);
+      await navigator.clipboard.writeText(toEmail);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -19,11 +26,35 @@ export default function Contact() {
     }
   };
 
-  const onSubmit = (e: FormEvent) => {
+  const copyPhone = async () => {
+    try {
+      await navigator.clipboard.writeText(phone);
+      setCopiedPhone(true);
+      setTimeout(() => setCopiedPhone(false), 2000);
+    } catch {
+      /* clipboard unavailable */
+    }
+  };
+
+  const buildSubject = () =>
+    encodeURIComponent(`Portfolio inquiry from ${form.name || "your site"}`);
+  const buildBody = () =>
+    encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+
+  const openGmail = () => {
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      toEmail
+    )}&su=${buildSubject()}&body=${buildBody()}`;
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const openMailApp = () => {
+    window.location.href = `mailto:${toEmail}?subject=${buildSubject()}&body=${buildBody()}`;
+  };
+
+  const onSubmitGmail = (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`);
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    openGmail();
   };
 
   return (
@@ -42,17 +73,93 @@ export default function Contact() {
               className="mt-8 flex w-full items-center justify-between gap-4 rounded-2xl border border-white/15 bg-[#111111] px-6 py-5 text-left hover:border-white/40"
             >
               <span className="font-mono text-sm break-all sm:text-base">
-                {profile.email}
+                {toEmail}
               </span>
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-black">
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               </span>
             </button>
-            {copied && (
+            {copied ? (
               <p className="mt-2 font-mono text-xs tracking-widest text-emerald-300 uppercase">
                 Copied to clipboard
               </p>
+            ) : (
+              <p className="mt-2 font-mono text-xs tracking-widest text-neutral-500 uppercase">
+                Click to copy
+              </p>
             )}
+
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <a
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+                  toEmail
+                )}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black hover:bg-neutral-300"
+              >
+                <Mail className="h-4 w-4" />
+                Open in Gmail
+              </a>
+              <a
+                href={`mailto:${toEmail}`}
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 px-4 py-3 text-sm font-semibold text-white hover:border-white hover:bg-white hover:text-black"
+              >
+                Mail app
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            {phone && (
+              <div className="mt-4">
+                <button
+                  onClick={copyPhone}
+                  className="flex w-full items-center justify-between gap-4 rounded-2xl border border-white/15 bg-[#111111] px-6 py-5 text-left hover:border-white/40"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15">
+                      <Phone className="h-4 w-4" />
+                    </span>
+                    <span className="font-mono text-sm sm:text-base">
+                      {phoneDisplay}
+                    </span>
+                  </span>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-black">
+                    {copiedPhone ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                  </span>
+                </button>
+                {copiedPhone ? (
+                  <p className="mt-2 font-mono text-xs tracking-widest text-emerald-300 uppercase">
+                    Number copied
+                  </p>
+                ) : (
+                  <p className="mt-2 font-mono text-xs tracking-widest text-neutral-500 uppercase">
+                    Click to copy number
+                  </p>
+                )}
+                <div className="mt-3 grid grid-cols-2 gap-3">
+                  <a
+                    href={`tel:${phone}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black hover:bg-neutral-300"
+                  >
+                    <Phone className="h-4 w-4" />
+                    Call me
+                  </a>
+                  <a
+                    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                      "Hi Hariom! I saw your portfolio and want to connect."
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 px-4 py-3 text-sm font-semibold text-white hover:border-white hover:bg-white hover:text-black"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
+            )}
+
             <div className="mt-8 space-y-1">
               {socials.map((s, i) => (
                 <a
@@ -77,11 +184,14 @@ export default function Contact() {
           </div>
 
           <form
-            onSubmit={onSubmit}
+            onSubmit={onSubmitGmail}
             className="rounded-3xl border border-white/10 bg-[#111111] p-6 sm:p-8"
           >
             <p className="font-mono text-xs tracking-[0.25em] text-neutral-500 uppercase">
               Send a message
+            </p>
+            <p className="mt-2 text-sm text-neutral-500">
+              This opens Gmail with your message pre-filled to {toEmail}.
             </p>
             <div className="mt-6 space-y-4">
               <div>
@@ -129,8 +239,15 @@ export default function Contact() {
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-sm font-semibold text-black hover:bg-neutral-300"
               >
-                Send message
+                Send via Gmail
                 <Send className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={openMailApp}
+                className="w-full text-center font-mono text-xs tracking-widest text-neutral-500 uppercase hover:text-white"
+              >
+                or use default mail app instead
               </button>
             </div>
           </form>
