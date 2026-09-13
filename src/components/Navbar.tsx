@@ -20,16 +20,16 @@ export default function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-[80] ${
           scrolled
-            ? "border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl"
+            ? "border-b border-white/10 bg-slate-950/80 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
           <a href="#top" className="flex items-center gap-2">
-            <span className="font-display flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-bold text-black">
+            <span className="font-display flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-sky-500 text-sm font-bold text-white shadow-lg shadow-violet-500/25">
               HP
             </span>
-            <span className="font-mono text-xs tracking-[0.25em] text-neutral-300 uppercase">
+            <span className="font-mono text-xs tracking-[0.25em] text-slate-300 uppercase">
               hariom
             </span>
           </a>
@@ -39,9 +39,9 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="font-mono text-xs tracking-[0.2em] text-neutral-400 uppercase hover:text-white"
+                  className="font-mono text-xs tracking-[0.2em] text-slate-400 uppercase transition-colors hover:text-white"
                 >
-                  <span className="mr-1 text-neutral-600">0{i + 1}</span> {link.label}
+                  <span className="mr-1 text-violet-400/70">0{i + 1}</span> {link.label}
                 </a>
               </li>
             ))}
@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black hover:bg-neutral-300 md:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-violet-200 md:inline-flex"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-4 w-4" />
@@ -68,15 +68,15 @@ export default function Navbar() {
 
       {/* mobile menu */}
       {open && (
-        <div className="fixed inset-0 z-[110] flex flex-col bg-[#0a0a0a] md:hidden">
+        <div className="fixed inset-0 z-[110] flex flex-col bg-slate-950 md:hidden">
           <div className="flex h-16 items-center justify-between px-5">
-            <span className="font-mono text-xs tracking-[0.25em] text-neutral-400 uppercase">
+            <span className="font-mono text-xs tracking-[0.25em] text-slate-400 uppercase">
               Menu
             </span>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white"
             >
               <X className="h-5 w-5" />
             </button>
@@ -87,16 +87,16 @@ export default function Navbar() {
                 key={link.href + link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-display border-b border-white/10 py-4 text-3xl font-bold tracking-tight"
+                className="font-display border-b border-white/10 py-4 text-3xl font-bold tracking-tight text-white"
               >
-                <span className="font-mono mr-3 text-sm font-normal text-neutral-500">
+                <span className="font-mono mr-3 text-sm font-normal text-violet-400/70">
                   0{i + 1}
                 </span>
                 {link.label}
               </a>
             ))}
           </nav>
-          <p className="px-8 pb-10 font-mono text-xs tracking-widest text-neutral-500 uppercase">
+          <p className="px-8 pb-10 font-mono text-xs tracking-widest text-slate-500 uppercase">
             {profile.availability}
           </p>
         </div>

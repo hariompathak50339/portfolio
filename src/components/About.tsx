@@ -12,9 +12,9 @@ export default function About() {
         <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-14">
           {/* portrait card */}
           <div className="lg:col-span-5">
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-sm">
               <div className="relative flex aspect-[4/5] flex-col items-center justify-center p-8 sm:aspect-square lg:aspect-[4/5]">
-                <div className="relative h-36 w-36 overflow-hidden rounded-full ring-4 ring-white/15 sm:h-44 sm:w-44">
+                <div className="relative h-36 w-36 overflow-hidden rounded-full ring-4 ring-violet-400/30 sm:h-44 sm:w-44">
                   <Image
                     src="/image.jpeg"
                     alt="Hariom Pathak"
@@ -24,15 +24,15 @@ export default function About() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <p className="font-display mt-6 text-xl font-bold">Hariom Pathak</p>
-                <p className="mt-1 font-mono text-xs tracking-[0.2em] text-neutral-500 uppercase">
+                <p className="font-display mt-6 text-xl font-bold text-white">Hariom Pathak</p>
+                <p className="mt-1 font-mono text-xs tracking-[0.2em] text-slate-400 uppercase">
                   {profile.role}
                 </p>
                 <div className="mt-6 flex flex-wrap justify-center gap-2">
                   {["Next.js", "TypeScript", "Tailwind"].map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-white/15 px-3 py-1 font-mono text-[11px] text-neutral-300"
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[11px] text-slate-300"
                     >
                       {t}
                     </span>
@@ -40,10 +40,10 @@ export default function About() {
                 </div>
               </div>
               <div className="relative flex items-center justify-between border-t border-white/10 px-6 py-4">
-                <span className="font-mono text-[11px] tracking-[0.2em] text-neutral-500 uppercase">
+                <span className="font-mono text-[11px] tracking-[0.2em] text-slate-500 uppercase">
                   EST. 2024 — v2.0
                 </span>
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]" />
               </div>
             </div>
           </div>
@@ -55,8 +55,8 @@ export default function About() {
                 key={i}
                 className={
                   i === 0
-                    ? "text-lg leading-relaxed text-neutral-200 sm:text-xl"
-                    : "mt-5 leading-relaxed text-neutral-400"
+                    ? "text-lg leading-relaxed text-slate-100 sm:text-xl"
+                    : "mt-5 leading-relaxed text-slate-400"
                 }
               >
                 {para}
@@ -64,22 +64,22 @@ export default function About() {
             ))}
 
             <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
-              <div className="bg-[#0f0f0f] p-6">
-                <GraduationCap className="h-5 w-5 text-neutral-300" />
-                <p className="mt-3 font-semibold">Education</p>
-                <p className="mt-1 text-sm leading-relaxed text-neutral-400">
+              <div className="bg-slate-950/70 p-6 backdrop-blur-sm">
+                <GraduationCap className="h-5 w-5 text-violet-300" />
+                <p className="mt-3 font-semibold text-white">Education</p>
+                <p className="mt-1 text-sm leading-relaxed text-slate-400">
                   Diploma in Information Technology, 2nd year at{" "}
-                  <span className="text-white">{profile.college}</span> — data
+                  <span className="text-slate-100">{profile.college}</span> — data
                   structures, DBMS, web tech & software engineering.
                 </p>
               </div>
-              <div className="bg-[#0f0f0f] p-6">
-                <Rocket className="h-5 w-5 text-neutral-300" />
-                <p className="mt-3 font-semibold">Right now</p>
-                <ul className="mt-1 space-y-1 text-sm leading-relaxed text-neutral-400">
+              <div className="bg-slate-950/70 p-6 backdrop-blur-sm">
+                <Rocket className="h-5 w-5 text-violet-300" />
+                <p className="mt-3 font-semibold text-white">Right now</p>
+                <ul className="mt-1 space-y-1 text-sm leading-relaxed text-slate-400">
                   {profile.currently.map((c) => (
                     <li key={c} className="flex gap-2">
-                      <span className="text-white">→</span> {c}
+                      <span className="text-violet-300">→</span> {c}
                     </li>
                   ))}
                 </ul>
@@ -90,17 +90,17 @@ export default function About() {
               href="https://fineprint.hariompathak.in"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 flex items-center justify-between rounded-2xl border border-white/15 bg-white px-6 py-5 text-black hover:bg-neutral-200"
+              className="mt-8 flex items-center justify-between rounded-2xl border border-violet-400/20 bg-gradient-to-r from-violet-600/20 to-sky-600/20 px-6 py-5 text-white backdrop-blur-sm transition-colors hover:border-violet-400/40 hover:from-violet-600/30 hover:to-sky-600/30"
             >
               <div>
-                <p className="font-mono text-[11px] tracking-[0.2em] uppercase opacity-60">
+                <p className="font-mono text-[11px] tracking-[0.2em] text-slate-400 uppercase">
                   Latest launch
                 </p>
                 <p className="font-display text-lg font-bold">
                   FinePrint — live in production
                 </p>
               </div>
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-black text-white">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-slate-950">
                 <ArrowUpRight className="h-5 w-5" />
               </span>
             </a>

@@ -10,10 +10,10 @@ export default function SectionHeading({
   return (
     <div className="flex items-end justify-between gap-6 border-b border-white/10 pb-6">
       <div>
-          <p className="font-mono text-xs tracking-[0.3em] text-neutral-400 uppercase">
-            <span className="text-blue-500">{index}</span> — {eyebrow}
+          <p className="font-mono text-xs tracking-[0.3em] text-slate-400 uppercase">
+            <span className="text-violet-400">{index}</span> — {eyebrow}
           </p>
-          <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl">
+          <h2 className="font-display mt-3 text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
           {title}
         </h2>
       </div>
